@@ -4,10 +4,6 @@
 
 using namespace std;
 
-bool isNumeric(char c) {
-  return isdigit(c); 
-}
-
 int main(int argc, char* argv[]) {
     ifstream file(argv[1]);
     string line;
@@ -17,7 +13,7 @@ int main(int argc, char* argv[]) {
 
     while (getline(file, line)) {
       for(char c : line) {
-        if (isNumeric(c)) {
+        if (isdigit(c)) {
             aux = (atoi(&c) * 10);
             break;
         }
@@ -26,7 +22,7 @@ int main(int argc, char* argv[]) {
       reverse(line.begin(), line.end());
     
       for(char c : line) {
-        if (isNumeric(c)) {
+        if (isdigit(c)) {
             aux += atoi(&c);
             break;
         }

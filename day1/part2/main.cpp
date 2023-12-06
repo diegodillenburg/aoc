@@ -6,15 +6,11 @@
 
 using namespace std;
 
-bool isNumeric(char c) {
-  return isdigit(c); 
-}
-
 int extractDigits(string line) {
   int aux = 0;
   
   for(char c : line) {
-    if (isNumeric(c)) {
+    if (isdigit(c)) {
         aux = (atoi(&c) * 10);
         break;
     }
@@ -23,7 +19,7 @@ int extractDigits(string line) {
   reverse(line.begin(), line.end());
 
   for(char c : line) {
-    if (isNumeric(c)) {
+    if (isdigit(c)) {
         aux += atoi(&c);
         break;
     }
